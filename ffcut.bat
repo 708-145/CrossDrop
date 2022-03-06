@@ -5,7 +5,7 @@ SET /P min=Please enter minute:
 IF "%min%"=="" GOTO Error
 SET /P sec=Please enter second: 
 IF "%sec%"=="" GOTO Error
-@set exe=%ffmpegpath% -i %1 -c copy -ss 00:%min%:%sec% "%~d1%~p1%~n1_cut%min%%~x1"
+@set exe=%ffmpegpath% -i %1 -c copy -ss 00:%min%:%sec% "%~d1%~p1%~n1_cut%min%.mkv"
 @echo %exe%
 %exe%
 

@@ -9,7 +9,7 @@ SET /P emin=Please enter end minute:
 IF "%min%"=="" GOTO Error
 SET /P esec=Please enter end second: 
 IF "%sec%"=="" GOTO Error
-@set exe=%ffmpegpath% -i %1 -c copy -ss 00:%min%:%sec% -to 00:%emin%:%esec% "%~d1%~p1%~n1_cut%~x1"
+@set exe=%ffmpegpath% -i %1 -ss 00:%min%:%sec% -to 00:%emin%:%esec% -c copy "%~d1%~p1%~n1_cut%min%%sec%_%emin%%esec%.mkv"
 @echo %exe%
 %exe%
 exit
